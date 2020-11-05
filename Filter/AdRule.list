@@ -1,6 +1,6 @@
 # copy from https://raw.githubusercontent.com/NobyDa/Script/master/QuantumultX/AdRule.list
-# Update > 2020.7.27 This rule is based on optimization by lhie1/Rules.
 # tag=NobyDa去广告
+# Update > 2020.7.27 This rule is based on optimization by lhie1/Rules.
 DOMAIN-SUFFIX,apoll.m.taobao.com,REJECT
 DOMAIN-SUFFIX,comet.yahoo.com,REJECT
 DOMAIN-SUFFIX,gemini.yahoo.com,REJECT

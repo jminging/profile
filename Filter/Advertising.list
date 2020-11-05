@@ -1,5 +1,5 @@
 # copy from https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Advertising.list
-# tag=广告
+# tag=🚦去广告
 # Advertising 广告
 # > General
 DOMAIN-KEYWORD,adservice,REJECT

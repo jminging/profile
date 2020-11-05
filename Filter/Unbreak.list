@@ -1,3 +1,5 @@
+# copy from https://raw.githubusercontent.com/ConnersHua/Profiles/master/Quantumult/X/Filter/Unbreak.list
+# tag=Unbreak
 # Unbreak
 # > General
 USER-AGENT,coffeecorp*,DIRECT

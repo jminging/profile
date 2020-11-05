@@ -1,5 +1,6 @@
-# > 毒奶专用
+# copy from https://raw.githubusercontent.com/limbopro/Profiles/master/limbopro/QuantumultX.list
 # tag=机场域名
+# > 毒奶专用
 DOMAIN-KEYWORD,limbopro,PROXY
 DOMAIN-KEYWORD,iplcm,PROXY
 DOMAIN-KEYWORD,kcssr,PROXY
