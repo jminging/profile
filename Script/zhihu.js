@@ -1,5 +1,7 @@
 let html = $response.body;
+let head = $response.head;
 let nonce = html.match(/nonce="[\w\-]*"/g)[1];
+let nonce = nonce || head.match(/nonce="[\w\-]*"/g);
 
 html = html.replace('apple-itunes-app', '');
 
