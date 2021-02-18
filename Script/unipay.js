@@ -18,7 +18,7 @@ try {
 			if (!!Cookie) {
 				$tool.setkeyval(Cookie, "authorization");
 				console.log("🍎Authorization:" + Cookie);
-				$tool.notify("云闪付签到!", "获得Authorization", Cookie, {img: img});
+				$tool.notify("云闪付获取Cookie成功", Cookie, {img: img});
 			}
 		}
 	} else {
