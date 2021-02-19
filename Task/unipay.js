@@ -56,7 +56,7 @@ function sign() {
 				for (var item in obj.days) {
 					if (obj.days[item] == 1) days++;
 				}
-				$.subt = "签到成功! \n" + "已签到:" + days + "天!");
+				$.subt = "签到成功! \n" + "已签到:" + days + "天!";
 			} else {
 				$.subt = "签到失败!"
 			}
