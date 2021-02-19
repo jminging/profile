@@ -60,6 +60,7 @@ function sign() {
 			} else {
 				$.subt = "签到失败!"
 			}
+			resolve()
 		})
 	})
 }
