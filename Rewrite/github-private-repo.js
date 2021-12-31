@@ -13,7 +13,13 @@ $.html = $.name // `页面`类请求的响应体
 !(async () => {
 	// 请求路径
 	$.path = getPath($request.url)
-	console.log(`ACCESSING ${$.path}`)
+	const username = $.path.match(
+		/\/github\.com\/([^\/]+)\//
+	)[1];
+	console.log(`ACCESSING ${$.path}, userName: ${username}`)
+	if ( username == config.username ) {
+		console.log(`ACCESSING PRIVATE REPO: ${$request.url}`);
+	}
 })()
 	.catch((e) => $.logErr(e))
 	.finally(() => doneGithub())
