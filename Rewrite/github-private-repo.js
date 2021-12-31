@@ -13,7 +13,7 @@ $.html = $.name // `页面`类请求的响应体
 !(async () => {
 	// 请求路径
 	$.path = getPath($request.url)
-	const username = $.path.match(
+	const username = ($.path).match(
 		/\/github\.com\/([^\/]+)\//
 	)[1];
 	console.log(`ACCESSING ${$.path}, userName: ${username}`)
