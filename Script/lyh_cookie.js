@@ -7,14 +7,21 @@ var $ = new Env('lyh');
 var memberId = '';
 var token = '';
 
+const url_reg = /^https:\/\/lyh\.lncmcc\.com\/zt-portal\/lnlyh\/portal\/app\/api\/v1\/my1001\/(\w+)\/(\w+)$/;
+
 (async function ReadCookie() {
 	const req = $request;
 	if ( req.method == 'POST' && req.headers ) {
-		const CV = (req.headers['accesstoken'] || req.headers['Accesstoken'] || '')
-		$.msg('lyh获取Token成功', CV)
+		token = (req.headers['accesstoken'] || req.headers['Accesstoken'] || '')
+		if ( url_reg.test(req.url) ) {
+			memberId = req.url.match(url_reg)[1]
+		}
+		$.msg('lyh获取Token成功', token + '\n' + memberId)
+
 	}
 })().catch(e => {
-
+	console.log('123 error')
+	console.log(e)
 })
 
 
