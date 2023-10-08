@@ -35,6 +35,8 @@ function updateToken() {
 		}
 		if ( memberId && token && updateToken() ) {
 			$.msg('lyh获取Token成功', token + '\n' + memberId)
+		} else {
+			console.log('没有找到Token')
 		}
 	}
 })().catch(e => {
