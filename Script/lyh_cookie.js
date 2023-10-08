@@ -14,7 +14,7 @@ COOKIE_KEY = 'CookiesLYH'
 function updateToken() {
 	console.log("更新Token")
 	let oldObj = $.getjson(COOKIE_KEY,  {})
-	console.log(oldObj)
+	console.log(JSON.stringify(oldObj))
 	console.log(token)
 	let hasChange = false
 	if ( Object.hasOwnProperty.call(oldObj, memberId) ) {
@@ -23,6 +23,9 @@ function updateToken() {
 	oldObj[memberId] = token
 	if ( hasChange ) {
 		$.setjson(oldObj, COOKIE_KEY)
+		console.log('Token保存成功')
+	} else {
+		console.log('Token没有变化')
 	}
 	return !hasChange
 }
