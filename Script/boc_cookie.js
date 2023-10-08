@@ -2,15 +2,15 @@ let title = '🔔福仔云游记';
 const COOKIE_KEY = 'Boc';
 const $ = new Env(title, true);
 
-var token = '';
+var body = '';
 
 function updateToken() {
-	let oldValue = $.getval(COOKIE_KEY)
-	let hasChange = !(oldValue == token)
+	let oldValue = $.getval(COOKIE_KEY) || ''
+	let hasChange = !(oldValue == body)
 	if ( !hasChange ) {
-		$.setval(token, COOKIE_KEY)
+		$.setval(body, COOKIE_KEY)
 		console.log('Token保存成功')
-		console.log(token)
+		console.log(body)
 	} else {
 		console.log('Token没有变化')
 	}
@@ -21,8 +21,8 @@ function updateToken() {
 (async function run() {
 	const req = $request;
 	if ( req.method == 'POST' && req.headers ) {
-		token = (req.headers['Authorization'] || req.headers['authorization'] || '')
-		if ( token && updateToken() ) {
+		body = req.body
+		if ( body && updateToken() ) {
 			$.msg($.name + '获取Token成功')
 		}
 	}
