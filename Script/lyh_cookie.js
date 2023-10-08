@@ -18,13 +18,13 @@ function updateToken() {
 		hasChange = !(token == oldObj[memberId])
 	}
 	oldObj[memberId] = token
-	if ( !hasChange ) {
+	if ( hasChange ) {
 		$.setjson(oldObj, COOKIE_KEY)
 		console.log('Token保存成功')
 	} else {
 		console.log('Token没有变化')
 	}
-	return hasChange
+	return !hasChange
 }
 
 

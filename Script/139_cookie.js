@@ -7,14 +7,14 @@ var body = '';
 function updateToken() {
 	let oldValue = $.getval(COOKIE_KEY)
 	let hasChange = !(oldValue == body)
-	if ( !hasChange ) {
+	if ( hasChange ) {
 		$.setval(body, COOKIE_KEY)
 		console.log('Token保存成功')
 		console.log(body)
 	} else {
 		console.log('Token没有变化')
 	}
-	return hasChange
+	return !hasChange
 }
 
 
