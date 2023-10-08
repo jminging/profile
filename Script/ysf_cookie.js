@@ -20,6 +20,8 @@ function updateToken() {
 
 (async function run() {
 	const req = $request;
+	console.log(req.method)
+	console.log(req.headers)
 	if ( req.method == 'GET' && req.headers ) {
 		token = (req.headers['Authorization'] || req.headers['authorization'] || '')
 		if ( token && updateToken() ) {
