@@ -12,11 +12,13 @@ const url_reg = /^https:\/\/lyh\.lncmcc\.com\/zt-portal\/lnlyh\/portal\/app\/api
 COOKIE_KEY = 'CookiesLYH'
 
 function updateToken() {
-	console.log("更新Token", memberId, token)
+	console.log("更新Token")
 	let oldObj = $.getjson(COOKIE_KEY,  {})
+	console.log(oldObj)
+	console.log(token)
 	let hasChange = false
 	if ( Object.hasOwnProperty.call(oldObj, memberId) ) {
-		hasChange = token == oldObj[memberId]
+		hasChange = !!(token == oldObj[memberId])
 	}
 	oldObj[memberId] = token
 	if ( hasChange ) {
