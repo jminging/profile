@@ -44,6 +44,7 @@ function updateToken() {
 	}
 })().catch(e => {
 	$.msg($.name, '脚本异常，请检查。')
+	console.log(e)
 }).finally(_ => {
 	$.done()
 })
