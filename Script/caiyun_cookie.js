@@ -2,13 +2,24 @@ let title = '🔔移动云盘';
 const COOKIE_KEY = 'CaiYun';
 const $ = new Env(title, true);
 
+var key = '';
 var token = '';
+var mnote = '';
 
 function updateToken() {
-	let oldValue = $.getval(COOKIE_KEY)
-	let hasChange = !(oldValue == token)
+	let oldObj = $.getjson(COOKIE_KEY, {})
+	oldObj.token = oldObj.token || ''
+	oldObj.mnote = oldObj.mnote || ''
+	let hasChange = false
+	if ( mnote ) {
+		hasChange = !(oldObj.mnote == mnote)
+		oldObj.mnote = mnote
+	} else if (token) {
+		hasChange = !(oldObj.token == token)
+		oldObj.token = token
+	}
 	if ( hasChange ) {
-		$.setval(token, COOKIE_KEY)
+		$.setjson(oldObj, COOKIE_KEY)
 		console.log('Token保存成功')
 	} else {
 		console.log('Token没有变化')
@@ -21,7 +32,13 @@ function updateToken() {
 	const req = $request;
 	if ( req.method == 'POST' && req.headers ) {
 		token = (req.headers['Authorization'] || req.headers['authorization'] || '')
-		if ( token && updateToken() ) {
+		if ( req.url.indexOf('aas.caiyun') !== -1 ) {
+			key = 'aas'
+		} else if ( req.url.indexOf('mnote.caiyun') !== -1 ) {
+			key = 'mnote'
+			mnote = req.body
+		}
+		if ( (token || mnote) && updateToken() ) {
 			$.msg($.name + '获取Token成功')
 		}
 	}
