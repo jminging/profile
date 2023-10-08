@@ -16,7 +16,7 @@ function updateToken() {
 	let oldObj = $.getjson(COOKIE_KEY,  {})
 	console.log(JSON.stringify(oldObj))
 	console.log(token)
-	let hasChange = false
+	let hasChange = true
 	if ( Object.hasOwnProperty.call(oldObj, memberId) ) {
 		hasChange = !!(token == oldObj[memberId])
 	}
