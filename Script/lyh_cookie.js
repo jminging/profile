@@ -12,10 +12,7 @@ const url_reg = /^https:\/\/lyh\.lncmcc\.com\/zt-portal\/lnlyh\/portal\/app\/api
 COOKIE_KEY = 'CookiesLYH'
 
 function updateToken() {
-	console.log("更新Token")
 	let oldObj = $.getjson(COOKIE_KEY,  {})
-	console.log(JSON.stringify(oldObj))
-	console.log(token)
 	let hasChange = true
 	if ( Object.hasOwnProperty.call(oldObj, memberId) ) {
 		hasChange = !!(token == oldObj[memberId])
@@ -39,9 +36,7 @@ function updateToken() {
 			memberId = req.url.match(url_reg)[1]
 		}
 		if ( memberId && token && updateToken() ) {
-			$.msg('lyh获取Token成功', token + '\n' + memberId)
-		} else {
-			console.log('没有找到Token')
+			$.msg('lyh获取Token成功', memberId)
 		}
 	}
 })().catch(e => {
