@@ -1,14 +1,15 @@
 {
   "id": "checkin.app.sub",
   "name": "测试订阅",
-  "author": "test",
-  "icon": "",
+  "author": "@test",
+  "icon": "https://avatars.githubusercontent.com/u/3126530",
   "repo": "https://github.com/jminging/profile/master/",
   "apps": [
 	{
-	  "id": "",
+	  "id": "test_cookie_save",
 	  "name": "签到Cookie提取器",
-	  "script": "https://raw.githubusercontent.com/jminging/profile/master/Task/cookie.js"
+	  "script": "https://raw.githubusercontent.com/jminging/profile/master/Task/cookie.js",
+	  "author": "@test"
 	}
   ]
 }
