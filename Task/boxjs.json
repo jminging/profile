@@ -1,1 +1,14 @@
-{}
+{
+  "id": "checkin.app.sub",
+  "name": "测试订阅",
+  "author": "test",
+  "icon": "",
+  "repo": "https://github.com/jminging/profile/master/",
+  "apps": [
+	{
+	  "id": "",
+	  "name": "签到Cookie提取器",
+	  "script": "https://raw.githubusercontent.com/jminging/profile/master/Task/cookie.js"
+	}
+  ]
+}
