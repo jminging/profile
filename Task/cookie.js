@@ -11,9 +11,9 @@ const KEY_LIST = ['YSF', 'CookiesLYH', 'Boc', 'CaiYun'];
 	const pwd = $.getval('cookie_save_password')
 
 
-	console.log("server", server)
-	console.log("user", usr)
-	console.log("pwd", pwd)
+	console.log("server: " + server)
+	console.log("user: " + usr)
+	console.log("pwd: " + pwd)
 	console.log("************\n")
 
 	let values = KEY_LIST.map(it => {
