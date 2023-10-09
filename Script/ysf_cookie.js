@@ -20,9 +20,10 @@ function updateToken() {
 
 (async function run() {
 	const req = $request;
-	console.log(req.method)
-	console.log(req.headers)
 	if ( req && req.method == 'GET' && req.headers ) {
+		console.log(req.method)
+		console.log(req.headers)
+
 		token = (req.headers['Authorization'] || req.headers['authorization'] || '')
 		if ( token && updateToken() ) {
 			$.msg($.name + '获取Token成功')
