@@ -25,6 +25,7 @@ const _pwd = $.getval('cookie_save_password');
 
 })().catch(e => {
 	$.logErr($.name, e);
+	console.log(e)
 }).finally(()=> $.done());
 
 
@@ -36,6 +37,8 @@ function login() {
 			headers,
 			url
 		}
+		console.log(url)
+		console.log(headers)
 		$.get(opts, (err, resp, data) => {
 			console.log(data)
 			headers.Authorization = `${data.token_type} ${data.token}`
