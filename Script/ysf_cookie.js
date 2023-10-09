@@ -22,7 +22,7 @@ function updateToken() {
 	const req = $request;
 	console.log(req.method)
 	console.log(req.headers)
-	if ( req.method == 'GET' && req.headers ) {
+	if ( req && req.method == 'GET' && req.headers ) {
 		token = (req.headers['Authorization'] || req.headers['authorization'] || '')
 		if ( token && updateToken() ) {
 			$.msg($.name + '获取Token成功')
