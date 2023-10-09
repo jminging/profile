@@ -1,10 +1,11 @@
+
 const $ = new Env('签到Cookie提取器');
 
 const KEY_LIST = ['YSF', 'CookiesLYH', 'Boc', 'CaiYun'];
 
-const server = $.getval('cookie_save_url')
-const usr = $.getval('cookie_save_username')
-const pwd = $.getval('cookie_save_password')
+const server = $.getval('cookie_save_url');
+const usr = $.getval('cookie_save_username');
+const pwd = $.getval('cookie_save_password');
 
 (async function run() {
 	// console.log("server: " + server)
