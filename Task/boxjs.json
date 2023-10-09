@@ -10,6 +10,7 @@
 	  "name": "签到Cookie提取器",
 	  "script": "https://raw.githubusercontent.com/jminging/profile/master/Task/cookie.js",
 	  "author": "@test",
+	  "keys": ["cookie_save_url", "cookie_save_username", "cookie_save_password"],
 	  "settings": [
 		{
 		  "id": "cookie_save_url",
