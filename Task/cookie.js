@@ -6,9 +6,9 @@ const KEY_LIST = ['YSF', 'CookiesLYH', 'Boc', 'CaiYun'];
 
 (async function run() {
 
-	const server = $.getData('cookie_save_url')
-	const usr = $.getData('cookie_save_username')
-	const pwd = $.getData('cookie_save_password')
+	const server = $.getval('cookie_save_url')
+	const usr = $.getval('cookie_save_username')
+	const pwd = $.getval('cookie_save_password')
 
 
 	console.log("server: " + server)
