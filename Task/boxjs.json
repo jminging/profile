@@ -2,14 +2,37 @@
   "id": "checkin.app.sub",
   "name": "测试订阅",
   "author": "@test",
-  "icon": "https://avatars.githubusercontent.com/u/3126530",
-  "repo": "https://github.com/jminging/profile/master/",
+  "icon": "https://avatars.githubusercontent.com/u/3126530?v=4",
+  "repo": "https://github.com/jminging/profile/",
   "apps": [
 	{
-	  "id": "test_cookie_save",
+	  "id": "cookie_save",
 	  "name": "签到Cookie提取器",
 	  "script": "https://raw.githubusercontent.com/jminging/profile/master/Task/cookie.js",
-	  "author": "@test"
+	  "author": "@test",
+	  "settings": [
+		{
+		  "id": "cookie_save_url",
+		  "name": "服务器地址",
+		  "value": "",
+		  "type": "string",
+		  "desc": "保存服务器地址"
+		},
+		{
+		  "id": "cookie_save_username",
+		  "name": "用户名",
+		  "value": "",
+		  "type": "string",
+		  "desc": "连接用户名"
+		},
+		{
+		  "id": "cookie_save_password",
+		  "name": "密码",
+		  "value": "",
+		  "type": "string",
+		  "desc": "连接密码"
+		}
+	  ]
 	}
   ]
 }
