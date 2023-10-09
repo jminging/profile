@@ -19,18 +19,25 @@ function updateToken() {
 
 
 (async function run() {
-	const req = $request;
-	$.msg('aaaa')
-	console.log(req)
-	if ( req && req.method == 'GET' && req.headers ) {
-		console.log(req.method)
-		console.log(req.headers)
+	if ( typeof $request != "undefined" ) {
+		const req = $request;
+		$.msg('aaaa')
+		console.log(req)
+		if ( req.method == 'GET' && req.headers ) {
+			console.log(req.method)
+			console.log(req.headers)
 
-		token = (req.headers['Authorization'] || req.headers['authorization'] || '')
-		if ( token && updateToken() ) {
-			$.msg($.name + '获取Token成功')
+			token = (req.headers['Authorization'] || req.headers['authorization'] || '')
+			if ( token && updateToken() ) {
+				$.msg($.name + '获取Token成功')
+			}
+		} else {
+			console.log($.name + ' 不支持的操作')
 		}
+	} else {
+		console.log($.name + ' 不支持的操作')
 	}
+
 })().catch(e => {
 	$.msg($.name, '脚本异常，请检查。')
 	console.log(e)
