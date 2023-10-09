@@ -9,8 +9,8 @@ const _pwd = $.getval('cookie_save_password');
 
 (async function run() {
 	console.log("server: " + _server);
-	// console.log("user: " + usr);
-	// console.log("pwd: " + pwd);
+	console.log("user: " + _usr);
+	console.log("pwd: " + _pwd);
 	console.log("************\n");
 
 	let values = KEY_LIST.map(it => {
