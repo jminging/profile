@@ -27,8 +27,8 @@ function login() {
 		$.get(opts, (err, resp, data) => {
 			console.log(data)
 			headers.Authorization = `${data.token_type} ${data.token}`
+			resolve()
 		})
-		resolve()
 	}))
 }
 
@@ -39,14 +39,14 @@ function login() {
 	console.log("************\n");
 
 	await login()
-	// let values = KEY_LIST.map(it => {
-	// 	return [it, $.getval(it)]
-	// });
-	//
-	// values.map(it => {
-	// 	console.log(it.join("  :  "))
-	// 	console.log('')
-	// });
+	let values = KEY_LIST.map(it => {
+		return [it, $.getval(it)]
+	});
+
+	values.map(it => {
+		console.log(it.join("  :  "))
+		console.log('')
+	});
 
 })().catch(e => {
 	$.logErr($.name, e);
