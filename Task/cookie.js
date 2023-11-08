@@ -38,7 +38,7 @@ function login() {
 	console.log("pwd: " + _pwd);
 	console.log("************\n");
 
-	await login()
+	// await login()
 	let values = KEY_LIST.map(it => {
 		return [it, $.getval(it)]
 	});
