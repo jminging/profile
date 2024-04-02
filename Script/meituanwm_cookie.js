@@ -9,7 +9,7 @@ const $ = new Env(cookieName);
 	if ($request && $request.method == 'GET' && $request.url.match(/c\/account\.html/) ) {
         console.log("美团外卖token 开始")
         const req_headers = $request.headers;
-	console.log(req_headers)
+	Object.keys(req_headers).forEach(it => { console.log(it, req_headers[it])})
         const toekn = req_headers['token'] || req_headers['Token']
         const uuid = req_headers['uuid'] || req_headers['Uuid']
         const cookie = toekn + "#" + uuid
