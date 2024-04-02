@@ -2,24 +2,18 @@
 
 
 const cookieName = '美团外卖'
-const tookenKey = 'meituanCookie'
+const tokenKey = 'meituanCookie'
 const $ = new API(cookieName);
 
-
-const requrl = $request.url
-const reqRef = $request.headers.Referer
-const req_headers = $request.headers;
-
-
-
 (async function run() {
-	if ($request && $request.method == 'GET' && requrl.match(/c\/account\.html/) ) {
+	if ($request && $request.method == 'GET' && $request.url.match(/c\/account\.html/) ) {
         console.log("美团外卖token 开始")
+        const req_headers = $request.headers;
         const toekn = req_headers['token'] || req_headers['Token']
         const uuid = req_headers['uuid'] || req_headers['Uuid']
         const cookie = toekn + "#" + uuid
     
-        $.write(cookie, tookenKey);
+        $.write(cookie, tokenKey);
         $.notify(`${cookieName}获取Token成功✅`)
     }
 })().catch(e => {
@@ -28,6 +22,7 @@ const req_headers = $request.headers;
 }).finally(_ => {
 	$.done()
 })
+
 
 
 
