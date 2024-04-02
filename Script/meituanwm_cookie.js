@@ -17,8 +17,8 @@ const $ = new API(cookieName);
         $.notify(`${cookieName}获取Token成功✅`)
     }
 })().catch(e => {
-	$.msg($.name, '脚本异常，请检查。')
 	console.log(e)
+	$.msg($.name, '脚本异常，请检查。')
 }).finally(_ => {
 	$.done({})
 })
