@@ -9,12 +9,13 @@ const $ = new Env(cookieName);
 	if ($request && $request.method == 'GET' && $request.url.match(/c\/account\.html/) ) {
         console.log("美团外卖token 开始")
         const req_headers = $request.headers;
+	console.log(req_headers)
         const toekn = req_headers['token'] || req_headers['Token']
         const uuid = req_headers['uuid'] || req_headers['Uuid']
         const cookie = toekn + "#" + uuid
     
         $.setval(cookie, tokenKey);
-        $.notify(`${cookieName}获取Token成功✅`)
+        $.msg(`${cookieName}获取Token成功✅`)
     }
 })().catch(e => {
 	$.msg($.name, '脚本异常，请检查。')
