@@ -1,7 +1,7 @@
 
 const $ = new Env('签到Cookie提取器');
 
-const KEY_LIST = ['YSF', 'CookiesLYH', 'Boc', 'CaiYun', 'meituanCookie', 'fmz200_meituan_cookie'];
+const KEY_LIST = ['YSF', 'CookiesLYH', 'Boc', 'CaiYun', 'meituanCookie', 'fmz200_meituan_cookie', 'ADriveCheckIn'];
 
 const _server = $.getval('cookie_save_url');
 const _usr = $.getval('cookie_save_username');
