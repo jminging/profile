@@ -3,7 +3,7 @@
 
 const cookieName = '美团外卖'
 const tokenKey = 'meituanCookie'
-const $ = new API(cookieName);
+const $ = new Env(cookieName);
 
 (async function run() {
 	if ($request && $request.method == 'GET' && $request.url.match(/c\/account\.html/) ) {
